@@ -1,0 +1,17 @@
+<form [formGroup]="form1" (ngSubmit)="onSubmit($event)">
+  <mat-checkbox formControlName="checkbox">Check me</mat-checkbox>
+  <button type="submit">Submit</button>
+</form>
+
+<form [formGroup]="form2" (ngSubmit)="onSubmit($event)">
+  <mat-checkbox
+    #checkbox
+    formControlName="checkbox"
+    [errorStateMatcher]="errorStateMatcher"
+    >Check me</mat-checkbox
+  >
+  <button type="button" (click)="checkbox.disabled = !checkbox.disabled">
+    Toggle
+  </button>
+  <button type="submit">Submit</button>
+</form>
